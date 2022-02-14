@@ -123,10 +123,8 @@ import (
 	"log"
 	"os"
 
-	"githubAnalyst"
-	"github"
-	"github"
 
+	"github.com/narendraMiddleware/gitAnalizer/github"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/joho/godotenv"
@@ -136,6 +134,7 @@ func setupRoutes(app *fiber.App) {
 	app.Get("/get-basic-details/:id", gitlab.GetProjectDetails)
 	app.Get("/get-language-details/:id", gitlab.GetLanguageDetails)
 	app.Get("/get-member-details/:id", gitlab.GetMemberDetails)
+	app.Get("/get-users-repo/:username",gitlab.GetRepoList)
 }
 
 func main() {
